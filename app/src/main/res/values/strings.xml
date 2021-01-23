@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TempoWala</string>
+
+    //register page
+    <string name="reg_toptext">TempoWala</string>
+    <string name="reg_2ndtext">Create A New Account</string>
+    <string name="reg_3rdtext">Full Name</string>
+    <string name="reg_4thtext">Email id</string>
+    <string name="reg_5thtext">Password</string>
+    <string name="reg_6thtext">Phone No.</string>
+    <string name="reg_7thtext">Sign Up</string>
+    <string name="reg_8thtext">Have an Account? Login Here.</string>
+
+    //login page
+    <string name="log_1sttext">Login Page</string>
+    <string name="log_2ndtext">Sign In</string>
+    <string name="log_3rdtext">New Here? Create Account.</string>
+
+    //mainactivity
+    <string name="logout">logout</string>
+</resources>

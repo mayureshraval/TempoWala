@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "6778056427",
+    "project_id": "tempowala-c78b8",
+    "storage_bucket": "tempowala-c78b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6778056427:android:40f43286e1baf3a30bd8ae",
+        "android_client_info": {
+          "package_name": "com.codewithmischief.tempowala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6778056427-eqgmp7bsn59slpc8p9dqj3empafs829p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codewithmischief.tempowala",
+            "certificate_hash": "d1e88c07745e8703863e05285e7380fc59633691"
+          }
+        },
+        {
+          "client_id": "6778056427-1e3p7qa7ha5b6bl91l9hjudm74ith0th.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3D_SzaoPVLcPnNzyJECtnHhCjvDhuUgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6778056427-1e3p7qa7ha5b6bl91l9hjudm74ith0th.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
