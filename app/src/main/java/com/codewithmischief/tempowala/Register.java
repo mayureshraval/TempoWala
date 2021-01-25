@@ -92,6 +92,7 @@ public class Register extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(phone)){
                     mPhone.setError("Phone No. Required");
+                    return;
                 }
                 if(phone.length()<10){
                     mPhone.setError("Invalid Phone No.");
@@ -118,11 +119,11 @@ public class Register extends AppCompatActivity {
                             user.put("password",password);
                             user.put("phone",phone);
 
-                            //using the document referene to set user document
+                            //using the document reference to set user document
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Log.d(TAG,"onSuccess: user profiled created for "+ userID);
+                                    Log.d(TAG,"onSuccess: user profile created for "+ userID);
                                 }
                             });
 

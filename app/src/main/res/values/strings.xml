@@ -15,7 +15,9 @@
     <string name="log_1sttext">Login Page</string>
     <string name="log_2ndtext">Sign In</string>
     <string name="log_3rdtext">New Here? Create Account.</string>
+    <string name="log_4thtext">Forgot Password?</string>
 
     //mainactivity
     <string name="logout">logout</string>
+    <string name="profile">Your profile</string>
 </resources>
