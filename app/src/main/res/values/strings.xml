@@ -29,10 +29,18 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="notice">Please Click on verify email to move further.\n
+        If you didn\'t get verification email \n
+        click on verify email button or check your spam folder.\n
+        Once you verify the email kindly press the \n
+        logout button and login again.
+
+
+    </string>
     //
 
 
-    <string name="Welcome">Welcome User</string>
+    <string name="Welcome">TempoWala</string>
     <string name="mainlogout">Logout</string>
     <string name="menu_slideshow">Slideshow</string>
 </resources>
