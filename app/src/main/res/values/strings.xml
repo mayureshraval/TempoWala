@@ -20,4 +20,19 @@
     //mainactivity
     <string name="logout">logout</string>
     <string name="profile">Your profile</string>
+    <string name="verifyemail">Email not verified!</string>
+    <string name="verifybtn">Verify Email</string>
+    <string name="title_activity_home">home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    //
+
+
+    <string name="Welcome">Welcome User</string>
+    <string name="mainlogout">Logout</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

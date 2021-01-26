@@ -80,4 +80,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profEmail" />
 
+    <TextView
+        android:id="@+id/emailNotVer"
+        android:layout_width="241dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="68dp"
+        android:background="#000000"
+        android:text="@string/verifyemail"
+        android:textColor="#FF0000"
+        android:textColorHighlight="#FF0000"
+        android:textColorHint="#FF0000"
+        android:textColorLink="#FF0000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:fontFamily="@font/racing_sans_one"
+        app:layout_constraintEnd_toStartOf="@+id/Verify"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logout" />
+
+    <Button
+        android:id="@+id/Verify"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="#000000"
+        android:text="@string/verifybtn"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
