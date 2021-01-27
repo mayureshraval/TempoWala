@@ -42,5 +42,10 @@
 
     <string name="Welcome">TempoWala</string>
     <string name="mainlogout">Logout</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="welcome">Home Page</string>
+    <string name="booknow">BOOK NOW</string>
+    <string name="bookinhis">Booking History</string>
+    <string name="joinus">Join us</string>
+    <string name="faq">Faq</string>
+    <string name="select">Click on one of the following:</string>
 </resources>

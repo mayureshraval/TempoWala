@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -25,6 +27,8 @@ public class MainActivity2 extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
 
+    ImageButton booknowbtn,bookhisbtn,joinusbtn,faqbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,11 @@ public class MainActivity2 extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         userId = fAuth.getCurrentUser().getUid();
         showname=findViewById(R.id.namelogout);
+
+        booknowbtn=findViewById(R.id.bookNow);
+        bookhisbtn=findViewById(R.id.bookinHistory);
+        joinusbtn=findViewById(R.id.joinUs);
+        faqbtn=findViewById(R.id.faq);
 
         DocumentReference documentReference = fstore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -51,6 +60,33 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        booknowbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        bookhisbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Redirecting to Booking History page!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        joinusbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Redirecting to JOIN US page!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        faqbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "Redirecting to FAQ page!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         logout=findViewById(R.id.mainLogout);
         logout.setOnClickListener(new View.OnClickListener() {
