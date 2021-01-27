@@ -114,19 +114,27 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
+                        //setting new logic to prevent crash somehow this fixes crash
                         String mail=resetMail.getText().toString();
-                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(Login.this, "Reset Link Sent!", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Login.this, "Reset Link Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
 
-                            }
-                        });
+                        if(TextUtils.isEmpty(mail)){
+                            resetMail.setError("Email Required!");
+                        }
+                        else {
+
+                            fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(Login.this, "Reset Link Sent!", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(Login.this, "Reset Link Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+                        }
                     }
                 });
 
