@@ -37,7 +37,20 @@
 
 
     </string>
-    //
+    //bookingpage
+    <string name="firstlastname">Fullname (First name &amp; Last name)</string>
+    <string name="mobnum">10 digit phone number</string>
+    <string name="pincode">6 Digit pincode</string>
+    <string name="flatno">Flat No,Bldg Name,Company,Apartment</string>
+    <string name="area">Area, Colony, Street, Sector, Village</string>
+    <string name="Landmark">Landmark</string>
+    <string name="Town">Town,City,Village</string>
+    <string name="State">State</string>
+    <string name="booknowbtn">Book</string>
+    //bookinghispage
+    <string name="history">Booking History</string>
+    <string name="editbook">Edit Booking</string>
+
 
 
     <string name="Welcome">TempoWala</string>

@@ -64,6 +64,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),bookingpage.class));
             }
         });
 
@@ -71,6 +72,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity2.this, "Redirecting to Booking History page!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),bookinghistory.class));
             }
         });
 
