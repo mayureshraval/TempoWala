@@ -190,6 +190,7 @@ public class bookinghistory extends AppCompatActivity {
                                         Toast.makeText(bookinghistory.this, "Booking successfully cancelled!", Toast.LENGTH_LONG).show();
                                         Log.d("Tag", "DocumentSnapshot successfully deleted!");
                                         startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                                        finish();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {

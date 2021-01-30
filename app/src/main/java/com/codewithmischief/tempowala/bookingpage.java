@@ -181,6 +181,7 @@ public class bookingpage extends AppCompatActivity {
                         Toast.makeText(bookingpage.this, "Booking Successful", Toast.LENGTH_SHORT).show();
                         Log.d("Tag","onSuccess: Successfully booked for "+ userID);
                         startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
