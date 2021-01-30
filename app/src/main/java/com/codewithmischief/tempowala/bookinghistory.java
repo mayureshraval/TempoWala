@@ -158,7 +158,7 @@ public class bookinghistory extends AppCompatActivity {
                 editbooking.setPositiveButton("yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(),bookingpage.class));
+                        startActivity(new Intent(getApplicationContext(),editbooking.class));
                     }
                 });
                 editbooking.setNegativeButton("No", new DialogInterface.OnClickListener() {
