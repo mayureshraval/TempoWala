@@ -112,7 +112,7 @@ public class bookinghistory extends AppCompatActivity {
 
                             mFlatno2.setText(documentSnapshot.getString("d4 - Flatno2"));
 
-                            mArea2.setText(documentSnapshot.getString("d5 - Area"));
+                            mArea2.setText(documentSnapshot.getString("d5 - Area2"));
 
                             mLandmark2.setText(documentSnapshot.getString("d6 - Landmark2"));
 
