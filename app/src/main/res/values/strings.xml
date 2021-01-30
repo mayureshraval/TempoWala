@@ -46,10 +46,18 @@
     <string name="Landmark">Landmark</string>
     <string name="Town">Town,City,Village</string>
     <string name="State">State</string>
-    <string name="booknowbtn">Book</string>
+    <string name="book">book</string>
     //bookinghispage
     <string name="history">Booking History</string>
     <string name="editbook">Edit Booking</string>
+    <string name="enterpickup">Enter The Pickup Details</string>
+    <string name="enterdestination">Enter The Destination Details</string>
+    <string name="yourpickupdetails">Your Pickup Details</string>
+    <string name="yourdestinationdetails">Your Destination Details</string>
+    <string name="cancelbook">Cancel Booking</string>
+    <string name="nobooking">No Booking History!</string>
+    <string name="nobooking1">Go to Booking Page</string>
+    <string name="nobooking2">To Start Booking..</string>
 
 
 
