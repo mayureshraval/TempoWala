@@ -59,7 +59,7 @@ public class bookingpage extends AppCompatActivity {
         mState2=findViewById(R.id.state2);
 
         mBook=findViewById(R.id.editbook);
-        progressBar=findViewById(R.id.progressBar3);
+        progressBar=findViewById(R.id.progressBar4);
 
         fAuth=FirebaseAuth.getInstance();
         fstore=FirebaseFirestore.getInstance();
@@ -134,7 +134,7 @@ public class bookingpage extends AppCompatActivity {
                     return;
                 }
                 if(pincode2.length()!=6){
-                    mPincode.setError("Enter Valid Pincode");
+                    mPincode2.setError("Enter Valid Pincode");
                     return;
                 }
 
@@ -155,6 +155,8 @@ public class bookingpage extends AppCompatActivity {
                 DocumentReference documentReference = fstore.collection("Booking").document(userID);
                 //creating a hashmap to send data
                 Map<String,Object> book = new HashMap<>();
+                //setting status
+                book.put("Status -","Active");
                 //pickup
                 book.put("a1 - Fullname",firstname);
                 book.put("a2 - PhoneNo",phoneno);
@@ -189,9 +191,32 @@ public class bookingpage extends AppCompatActivity {
                         Toast.makeText(bookingpage.this, "Error!" + e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+                //creating backup collection
+                DocumentReference newbackup =fstore.collection("Backup").document(userID);
+                Map<String,Object> backup = new HashMap<>();
+                backup.put("Status -","Active");
+                //pickup
+                backup.put("a1 - Fullname",firstname);
+                backup.put("a2 - PhoneNo",phoneno);
+                backup.put("a3 - Pincode",pincode);
+                backup.put("a4 - Flatno",flatno);
+                backup.put("a5 - Area",area);
+                backup.put("a6 - Landmark",landmark);
+                backup.put("a7 - Town",town);
+                backup.put("a8 - State",state);
+                //destination
+                backup.put("d1 - Fullname2",firstname2);
+                backup.put("d2 - PhoneNo2",phoneno2);
+                backup.put("d3 - Pincode2",pincode2);
+                backup.put("d4 - Flatno2",flatno2);
+                backup.put("d5 - Area2",area2);
+                backup.put("d6 - Landmark2",landmark2);
+                backup.put("d7 - Town2",town2);
+                backup.put("d8 - State2",state2);
 
+                newbackup.set(backup);
 
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(View.INVISIBLE);
             }
         });
     }

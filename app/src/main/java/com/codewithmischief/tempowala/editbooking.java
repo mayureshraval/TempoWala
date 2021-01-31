@@ -13,8 +13,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -194,7 +196,7 @@ public class editbooking extends AppCompatActivity {
                     return;
                 }
                 if(pincode2.length()!=6){
-                    mPincode.setError("Enter Valid Pincode");
+                    mPincode2.setError("Enter Valid Pincode");
                     return;
                 }
 
@@ -215,6 +217,8 @@ public class editbooking extends AppCompatActivity {
                 DocumentReference documentReference = fstore.collection("Booking").document(userID);
                 //creating a hashmap to send data
                 Map<String,Object> book = new HashMap<>();
+                //setting status
+                book.put("Status -","Active + \n Updated");
                 //pickup
                 book.put("a1 - Fullname",firstname);
                 book.put("a2 - PhoneNo",phoneno);
@@ -246,12 +250,51 @@ public class editbooking extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(editbooking.this, "Error!" + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(editbooking.this, "Error!" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 });
+//                documentReference.set(book).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if(task.isSuccessful()){
+//                            Toast.makeText(editbooking.this, "Booking Successful", Toast.LENGTH_SHORT).show();
+//                          Log.d("Tag","onSuccess: Successfully booked for "+ userID);
+//                          startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+//                          finish();
+//                        }
+//                        else{
+//                            Toast.makeText(editbooking.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                            progressBar.setVisibility(View.INVISIBLE);
+//                        }
+//                    }
+//                });
+                //creating backup collection
+                DocumentReference newbackup =fstore.collection("Backup").document(userID);
+                Map<String,Object> backup = new HashMap<>();
+                backup.put("Status -","Active \n + Updated");
+                //pickup
+                backup.put("a1 - Fullname",firstname);
+                backup.put("a2 - PhoneNo",phoneno);
+                backup.put("a3 - Pincode",pincode);
+                backup.put("a4 - Flatno",flatno);
+                backup.put("a5 - Area",area);
+                backup.put("a6 - Landmark",landmark);
+                backup.put("a7 - Town",town);
+                backup.put("a8 - State",state);
+                //destination
+                backup.put("d1 - Fullname2",firstname2);
+                backup.put("d2 - PhoneNo2",phoneno2);
+                backup.put("d3 - Pincode2",pincode2);
+                backup.put("d4 - Flatno2",flatno2);
+                backup.put("d5 - Area2",area2);
+                backup.put("d6 - Landmark2",landmark2);
+                backup.put("d7 - Town2",town2);
+                backup.put("d8 - State2",state2);
+
+                newbackup.set(backup);
 
 
-                progressBar.setVisibility(View.GONE);
             }
         });
     }
