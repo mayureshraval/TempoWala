@@ -80,6 +80,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity2.this, "Redirecting to JOIN US page!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),Joinus.class));
             }
         });
 

@@ -67,6 +67,9 @@
     <string name="booknow">BOOK NOW</string>
     <string name="bookinhis">Booking History</string>
     <string name="joinus">Join us</string>
+    <string name="Request">Please fill this application to join our service.\nAfter you click on submit,\nOur team will review your application and call you\nOnce it has been approved.</string>
     <string name="faq">Faq</string>
     <string name="select">Click on one of the following:</string>
+    <string name="aadhar">12 digit Aadhaar number</string>
+    <string name="dl">Driving License number</string>
 </resources>
