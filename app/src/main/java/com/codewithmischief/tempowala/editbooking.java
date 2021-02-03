@@ -270,6 +270,18 @@ public class editbooking extends AppCompatActivity {
 //                    }
 //                });
                 //creating backup collection
+//                trying to autoincrement the document number if exists
+//                fstore.collection("Backup").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if(task.getResult().exists()){
+//                        userID = userID+1;
+//                        }
+//                        else{
+//                            //do nothing
+//                        }
+//                    }
+//                });
                 DocumentReference newbackup =fstore.collection("Backup").document(userID);
                 Map<String,Object> backup = new HashMap<>();
                 backup.put("Status -","Active \n + Updated");

@@ -15,8 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -34,7 +36,7 @@ public class bookinghistory extends AppCompatActivity {
 
     TextView mFirstnamelastname,mMobnum,mPincode,mFlatno,mArea,mLandmark,mTown,mState,
              mFirstnamelastname2,mMobnum2,mPincode2,mFlatno2,mArea2,mLandmark2,mTown2,mState2,
-             mYourpickup,mYourdestination,mStatus;
+             mYourpickup,mYourdestination,mStatus,mDoesntexists;
 
     Button mEdit,mCancel,mDelete;
     String userID;
@@ -68,6 +70,8 @@ public class bookinghistory extends AppCompatActivity {
         mTown2 = findViewById(R.id.town2);
         mState2 = findViewById(R.id.state2);
 
+        mDoesntexists = findViewById(R.id.notexisting);
+
         mEdit = findViewById(R.id.editbook);
         mCancel=findViewById(R.id.cancelbook);
         mDelete=findViewById(R.id.deletebook);
@@ -77,7 +81,39 @@ public class bookinghistory extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
+        fstore.collection("Booking").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.getResult().exists()) {
+                    //do nothing
+                } else {
+                    mYourpickup.setVisibility(View.INVISIBLE);
+                    mYourdestination.setVisibility(View.INVISIBLE);
+                    mFirstnamelastname.setVisibility(View.INVISIBLE);
+                    mMobnum.setVisibility(View.INVISIBLE);
+                    mPincode.setVisibility(View.INVISIBLE);
+                    mFlatno.setVisibility(View.INVISIBLE);
+                    mArea.setVisibility(View.INVISIBLE);
+                    mLandmark.setVisibility(View.INVISIBLE);
+                    mTown.setVisibility(View.INVISIBLE);
+                    mState.setVisibility(View.INVISIBLE);
 
+                    mFirstnamelastname2.setVisibility(View.INVISIBLE);
+                    mMobnum2.setVisibility(View.INVISIBLE);
+                    mPincode2.setVisibility(View.INVISIBLE);
+                    mFlatno2.setVisibility(View.INVISIBLE);
+                    mArea2.setVisibility(View.INVISIBLE);
+                    mLandmark2.setVisibility(View.INVISIBLE);
+                    mTown2.setVisibility(View.INVISIBLE);
+                    mState2.setVisibility(View.INVISIBLE);
+
+                    mEdit.setVisibility(View.INVISIBLE);
+                    mCancel.setVisibility(View.INVISIBLE);
+                    mDelete.setVisibility(View.INVISIBLE);
+                    mDoesntexists.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
             final DocumentReference documentReference = fstore.collection("Booking").document(userID);
 

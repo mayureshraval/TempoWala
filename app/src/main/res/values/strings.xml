@@ -72,4 +72,6 @@
     <string name="select">Click on one of the following:</string>
     <string name="aadhar">12 digit Aadhaar number</string>
     <string name="dl">Driving License number</string>
+    <string name="alreadyexists">Your application is already submitted.\nOnce it has been approved we will call you.\nThanks,\nTeam TempoWala.</string>
+    <string name="doesntexists">No Booking History.\nGo to Booking Page! To Start Booking.</string>
 </resources>

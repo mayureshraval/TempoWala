@@ -497,5 +497,27 @@
             app:layout_constraintEnd_toStartOf="@+id/yourpickup"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/notexisting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="30dp"
+            android:text="@string/doesntexists"
+            android:textColor="#6200EA"
+            android:textColorHighlight="#6200EA"
+            android:textColorHint="#6200EA"
+            android:textColorLink="#6200EA"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.17000002" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

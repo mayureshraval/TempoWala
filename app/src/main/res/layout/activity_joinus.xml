@@ -83,6 +83,7 @@
         android:ems="10"
         android:hint="@string/mobnum"
         android:inputType="phone"
+        android:maxLength="10"
         android:textColor="#000000"
         android:textColorHighlight="#FFD600"
         android:textColorHint="#000000"
@@ -102,6 +103,7 @@
         android:ems="10"
         android:hint="@string/aadhar"
         android:inputType="phone"
+        android:maxLength="12"
         android:textColor="#000000"
         android:textColorHighlight="#FFD600"
         android:textColorHint="#000000"
@@ -121,6 +123,7 @@
         android:ems="10"
         android:hint="@string/dl"
         android:inputType="textPersonName"
+        android:maxLength="15"
         android:textColor="#000000"
         android:textColorHighlight="#FFD600"
         android:textColorHint="#000000"
@@ -189,5 +192,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempowalastate"
         app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/alreadyexist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/alreadyexists"
+        android:textColor="#64DD17"
+        android:textColorHighlight="#64DD17"
+        android:textColorHint="#64DD17"
+        android:textColorLink="#64DD17"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
