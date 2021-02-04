@@ -67,6 +67,7 @@ EditText mtempofullname,mtempophone,mtempoaadhar,mtempodl,mtempocity,mtempostate
                     mExists.setVisibility(View.VISIBLE);
                 }
                 else{
+                    mExists.setVisibility(View.INVISIBLE);
                     //do nothing
                 }
             }

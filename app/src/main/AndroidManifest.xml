@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Joinus"></activity>
+        <activity android:name=".faq"></activity>
+        <activity android:name=".Joinus" />
         <activity android:name=".editbooking" />
         <activity android:name=".bookinghistory" />
         <activity android:name=".bookingpage" />

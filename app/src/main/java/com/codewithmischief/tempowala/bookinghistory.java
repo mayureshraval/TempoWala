@@ -84,9 +84,7 @@ public class bookinghistory extends AppCompatActivity {
         fstore.collection("Booking").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.getResult().exists()) {
-                    //do nothing
-                } else {
+                if (!task.getResult().exists()) {
                     mYourpickup.setVisibility(View.INVISIBLE);
                     mYourdestination.setVisibility(View.INVISIBLE);
                     mFirstnamelastname.setVisibility(View.INVISIBLE);
@@ -111,6 +109,8 @@ public class bookinghistory extends AppCompatActivity {
                     mCancel.setVisibility(View.INVISIBLE);
                     mDelete.setVisibility(View.INVISIBLE);
                     mDoesntexists.setVisibility(View.VISIBLE);
+                } else {
+                    //do nothing
                 }
             }
         });
