@@ -2,6 +2,9 @@ package com.codewithmischief.tempowala;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class faq extends AppCompatActivity {
-TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7;
+TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,12 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mAns6=findViewById(R.id.ans6);
         mfaq7=findViewById(R.id.faq7);
         mAns7=findViewById(R.id.ans7);
+        mfaq8=findViewById(R.id.faq8);
+        mAns8=findViewById(R.id.ans8);
+        mfaq9=findViewById(R.id.faq9);
+        mAns9 =findViewById(R.id.ans9);
+        mfaq10=findViewById(R.id.faq10);
+        mAns10=findViewById(R.id.ans10);
 
 //        mfaq.setOnClickListener(new View.OnClickListener() {
 //            int counter=0; //setting counter to count onclick
@@ -119,6 +128,54 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
             public void onClick(View view) {
                 if(mAns7.getVisibility()== View.VISIBLE){
                     mAns7.setVisibility(View.GONE);
+                }
+                else
+                    mAns7.setVisibility(View.VISIBLE);
+            }
+        });
+        mfaq8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mAns8.getVisibility()== View.VISIBLE){
+                    mAns8.setVisibility(View.GONE);
+                }
+                else
+                    mAns8.setVisibility(View.VISIBLE);
+            }
+        });
+        mfaq9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mAns9.getVisibility()== View.VISIBLE){
+                    mAns9.setVisibility(View.GONE);
+                }
+                else
+                    mAns9.setVisibility(View.VISIBLE);
+                    mAns9.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String[] ourMail = {"tempowalaofficial@gmail.com"};
+//                            String[] cc = {"tempowalaofficial@gmail.com"};
+//                            String[] bcc = {"tempowalaofficial@gmail.com"};
+                            Intent intent =new Intent(Intent.ACTION_SENDTO);
+                            intent.setData(Uri.parse("mailto:"));
+                            intent.putExtra(Intent.EXTRA_EMAIL, ourMail);
+//                            intent.putExtra(Intent.EXTRA_CC, cc);
+//                            intent.putExtra(Intent.EXTRA_BCC, bcc);
+                            intent.putExtra(Intent.EXTRA_SUBJECT,"Reason to contact here..");
+                            intent.putExtra(Intent.EXTRA_TEXT,"Full Name:\n Phone No:(Optional) \nExplain in detail here..");
+
+                            startActivity(Intent.createChooser(intent,"Choose Application To Send Email"));
+
+                        }
+                    });
+            }
+        });
+        mfaq10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mAns10.getVisibility()== View.VISIBLE){
+                    mAns10.setVisibility(View.GONE);
                 }
                 else
                     mAns7.setVisibility(View.VISIBLE);

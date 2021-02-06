@@ -102,4 +102,13 @@
     <string name="a6">Ans) You can pay by Cash on Delivery, once your order is completed.</string>
     <string name="q7">Q7) Having a tempo,How to join?</string>
     <string name="a7">Ans) To join us simply click on the Join Us button from Home Page.\nFill in required details and click on submit.\nOnce submitted We will Review your Application.\nOnce Approved we will call you to discuss further.</string>
+    <string name="q8">Q8) Working hours?</string>
+    <string name="a8">Ans) 10AM To 8PM 24x7.\n Bookings after 8PM will be attended next day!</string>
+    <string name="q9">Q9) Contact Us/Lodge Complain</string>
+    <string name="a9">Ans) Click to Email: tempowalaofficial@gmail.com</string>
+    <string name="q10">Q10) About Us.</string>
+    <string name="a10">Ans) We are a small startup company,\nFounded in Jan,2021.\n
+        We have a vision to provide easy booking solutions to our users.\n
+        We also want to create employment by letting new TempoWales Join Us.\n
+        Our goal is to serve the people with full dedication.</string>
 </resources>
