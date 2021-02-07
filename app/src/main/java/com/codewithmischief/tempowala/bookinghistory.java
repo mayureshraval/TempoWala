@@ -85,29 +85,29 @@ public class bookinghistory extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (!task.getResult().exists()) {
-                    mYourpickup.setVisibility(View.INVISIBLE);
-                    mYourdestination.setVisibility(View.INVISIBLE);
-                    mFirstnamelastname.setVisibility(View.INVISIBLE);
-                    mMobnum.setVisibility(View.INVISIBLE);
-                    mPincode.setVisibility(View.INVISIBLE);
-                    mFlatno.setVisibility(View.INVISIBLE);
-                    mArea.setVisibility(View.INVISIBLE);
-                    mLandmark.setVisibility(View.INVISIBLE);
-                    mTown.setVisibility(View.INVISIBLE);
-                    mState.setVisibility(View.INVISIBLE);
+                    mYourpickup.setVisibility(View.GONE);
+                    mYourdestination.setVisibility(View.GONE);
+                    mFirstnamelastname.setVisibility(View.GONE);
+                    mMobnum.setVisibility(View.GONE);
+                    mPincode.setVisibility(View.GONE);
+                    mFlatno.setVisibility(View.GONE);
+                    mArea.setVisibility(View.GONE);
+                    mLandmark.setVisibility(View.GONE);
+                    mTown.setVisibility(View.GONE);
+                    mState.setVisibility(View.GONE);
 
-                    mFirstnamelastname2.setVisibility(View.INVISIBLE);
-                    mMobnum2.setVisibility(View.INVISIBLE);
-                    mPincode2.setVisibility(View.INVISIBLE);
-                    mFlatno2.setVisibility(View.INVISIBLE);
-                    mArea2.setVisibility(View.INVISIBLE);
-                    mLandmark2.setVisibility(View.INVISIBLE);
-                    mTown2.setVisibility(View.INVISIBLE);
-                    mState2.setVisibility(View.INVISIBLE);
+                    mFirstnamelastname2.setVisibility(View.GONE);
+                    mMobnum2.setVisibility(View.GONE);
+                    mPincode2.setVisibility(View.GONE);
+                    mFlatno2.setVisibility(View.GONE);
+                    mArea2.setVisibility(View.GONE);
+                    mLandmark2.setVisibility(View.GONE);
+                    mTown2.setVisibility(View.GONE);
+                    mState2.setVisibility(View.GONE);
 
-                    mEdit.setVisibility(View.INVISIBLE);
-                    mCancel.setVisibility(View.INVISIBLE);
-                    mDelete.setVisibility(View.INVISIBLE);
+                    mEdit.setVisibility(View.GONE);
+                    mCancel.setVisibility(View.GONE);
+                    mDelete.setVisibility(View.GONE);
                     mDoesntexists.setVisibility(View.VISIBLE);
                 } else {
                     //do nothing
@@ -117,7 +117,7 @@ public class bookinghistory extends AppCompatActivity {
 
             final DocumentReference documentReference = fstore.collection("Booking").document(userID);
 
-            //if the document exists then set text and make INVISIBLE, but if it doesn't exist  be INVISIBLE
+            //if the document exists then set text and make GONE, but if it doesn't exist  be GONE
             //i am a beginner i set this if condition it doesn't seem to work it just sets the textviews to VISIBLE please help
             documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
                     @Override

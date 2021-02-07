@@ -177,8 +177,9 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                 if(mAns10.getVisibility()== View.VISIBLE){
                     mAns10.setVisibility(View.GONE);
                 }
-                else
-                    mAns7.setVisibility(View.VISIBLE);
+                else {
+                    mAns10.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
