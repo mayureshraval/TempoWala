@@ -61,7 +61,7 @@
     <string name="nobooking2">To Start Booking..</string>
     //alertbuilder
     <string name="Title"><b>FARE CALCULATOR</b></string>
-    <string name="Message"><b><u>ENTER KM TO CALCULATE</u></b>\n\n<i>NOTE:The Fare Price Is Subject to Changes\nConfirm the price after booking on call.</i></string>
+    <string name="Message"><b>ENTER KM TO CALCULATE</b>\n\n<i>NOTE:The Fare Price Is Subject to Changes\nConfirm the price after booking on call.\n</i></string>
 
 
     <string name="Welcome">TempoWala</string>

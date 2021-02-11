@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +24,8 @@ import com.google.protobuf.StringValue;
 
 public class faq extends AppCompatActivity {
 TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10;
-    public final String KM_HINT="\tEnter Km";
-    public final String FARE_HINT="\tResult";
+    public final String KM_HINT="Enter Km";
+    public final String FARE_HINT="\nResult";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,27 +115,28 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Double n1,Result;
-                        n1=Double.parseDouble(KM.getText().toString());
-                        if(n1!=null){
+                        String nullCheck=KM.getText().toString();
+                        if(TextUtils.isEmpty(nullCheck)){
+                            Toast.makeText(faq.this, "Enter KM or Press Close!", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Double n1,Result;
+                            n1=Double.parseDouble(nullCheck);
+
                             if(n1==0){
-                                FARE.setText("\tRs. 0");
+                                FARE.setText("\nRs. 0");
                             }
                             else if(n1==1){
-                                FARE.setText("\tRs.500");
+                                FARE.setText("\nRs.500");
                             }
                             else if(n1==2){
-                                FARE.setText("\tRs.700");
+                                FARE.setText("\nRs.700");
                             }
                             else{
                                 Result=n1*300;
-                                FARE.setText("\tRs."+ Result);
+                                FARE.setText("\nRs."+ Result);
                             }
                         }
-                        else{
-                            Toast.makeText(faq.this, "Enter Km!", Toast.LENGTH_SHORT).show();
-                        }
-
                     }
                 });
 

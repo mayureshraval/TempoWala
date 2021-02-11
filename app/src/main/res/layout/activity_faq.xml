@@ -52,10 +52,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/clickonthem"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:textColorHint="#000000"
+            android:textColorLink="#000000"
             android:textSize="18sp"
             app:fontFamily="@font/racing_sans_one"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,15 +98,15 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:text="@string/a1"
                 android:textColor="#000000"
                 android:textColorHighlight="#000000"
                 android:textColorHint="#000000"
                 android:textColorLink="#000000"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:visibility="visible"
-                android:focusable="true" />
+                android:textStyle="bold|italic"
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/faq2"
