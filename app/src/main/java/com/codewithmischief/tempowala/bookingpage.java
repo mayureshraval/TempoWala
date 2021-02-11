@@ -86,6 +86,7 @@ public class bookingpage extends AppCompatActivity {
                 String town2      = mTown2.getText().toString().trim();
                 String state2     = mState2.getText().toString().trim();
 
+                //Validation
                 //pickup
                 if(TextUtils.isEmpty(firstname)){
                     mFirstnamelastname.setError("Fullname Required!");
@@ -151,7 +152,7 @@ public class bookingpage extends AppCompatActivity {
 
                  //saving data
                 userID=fAuth.getCurrentUser().getUid();
-                //creating a document reference creating a collection users and making a new doc using user id
+                //creating a document reference creating a collection booking and making a new doc using user id
                 DocumentReference documentReference = fstore.collection("Booking").document(userID);
                 //creating a hashmap to send data
                 Map<String,Object> book = new HashMap<>();

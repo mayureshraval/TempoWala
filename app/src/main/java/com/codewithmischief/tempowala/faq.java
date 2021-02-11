@@ -2,17 +2,29 @@ package com.codewithmischief.tempowala;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Notification;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.protobuf.StringValue;
 
 public class faq extends AppCompatActivity {
 TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10;
+    public final String KM_HINT="\tEnter Km";
+    public final String FARE_HINT="\tResult";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +84,64 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
 //                        marginParams.bottomMargin);
             }
         });
+        mAns.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder farecalculator = new AlertDialog.Builder(view.getContext());
+                        farecalculator.setTitle(R.string.Title)
+                        .setMessage(R.string.Message);
+
+
+                // Set an EditText view to get user input
+                final EditText KM = new EditText(view.getContext());
+                KM.setInputType(InputType.TYPE_CLASS_NUMBER);
+                KM.setRawInputType(Configuration.KEYBOARD_12KEY);
+                KM.setHint(KM_HINT);
+                final TextView FARE = new TextView(view.getContext());
+                FARE.setHint(FARE_HINT);
+                FARE.setPadding(5,5,5,5);
+                FARE.setTextSize(18);
+                LinearLayout layout = new LinearLayout(getApplicationContext());
+                layout.setOrientation(LinearLayout.VERTICAL);
+                layout.addView(KM);
+                layout.addView(FARE);
+                farecalculator.setView(layout);
+
+                farecalculator.setPositiveButton("Calculate",null)
+                        .setNegativeButton("Close",null);
+                final AlertDialog dialog=farecalculator.create();
+                dialog.show();
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Double n1,Result;
+                        n1=Double.parseDouble(KM.getText().toString());
+                        if(n1!=null){
+                            if(n1==0){
+                                FARE.setText("\tRs. 0");
+                            }
+                            else if(n1==1){
+                                FARE.setText("\tRs.500");
+                            }
+                            else if(n1==2){
+                                FARE.setText("\tRs.700");
+                            }
+                            else{
+                                Result=n1*300;
+                                FARE.setText("\tRs."+ Result);
+                            }
+                        }
+                        else{
+                            Toast.makeText(faq.this, "Enter Km!", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+
+            }
+        });
+
         mfaq2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
