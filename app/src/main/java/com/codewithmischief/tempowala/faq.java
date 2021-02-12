@@ -115,6 +115,12 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        /*
+                        so what happened here was the double value is a primitive data type which cannot be null thus cannot be compared to null.
+                        so the app was crashing when clicked on alert builder positive button when the data was null
+                        so i took the value into a string first checked it if it was empty then if it wasn't empty i parsed it to double value to execute further
+                        took me 10 hours to figure out this one. started at morning 10 , 9:34 i solved it lol.
+                        */
                         String nullCheck=KM.getText().toString();
                         if(TextUtils.isEmpty(nullCheck)){
                             Toast.makeText(faq.this, "Enter KM or Press Close!", Toast.LENGTH_SHORT).show();
