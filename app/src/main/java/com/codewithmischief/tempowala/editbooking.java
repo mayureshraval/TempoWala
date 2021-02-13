@@ -257,7 +257,7 @@ public class editbooking extends AppCompatActivity {
                                 getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_ONE_SHOT);
                         String Channel_Id="Default";
                         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),Channel_Id);
-                        builder.setSmallIcon(R.drawable.ic_launcher_background)
+                        builder.setSmallIcon(R.drawable.ic_notify)
                                 .setContentTitle("Booking Edit Successful!")
                                 .setContentText("Tap to View,Edit,Cancel!")
                                 .setAutoCancel(true)

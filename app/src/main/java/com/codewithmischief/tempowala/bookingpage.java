@@ -64,7 +64,7 @@ public class bookingpage extends AppCompatActivity {
         mState2=findViewById(R.id.state2);
 
         mBook=findViewById(R.id.editbook);
-        progressBar=findViewById(R.id.progressBar4);
+        progressBar=findViewById(R.id.progressBar5);
 
         fAuth=FirebaseAuth.getInstance();
         fstore=FirebaseFirestore.getInstance();
@@ -196,7 +196,7 @@ public class bookingpage extends AppCompatActivity {
                                 getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_ONE_SHOT);
                         String Channel_Id="Default";
                         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),Channel_Id);
-                        builder.setSmallIcon(R.drawable.ic_launcher_background)
+                        builder.setSmallIcon(R.drawable.ic_notify)
                                 .setContentTitle("Booking Successful!")
                                 .setContentText("Tap to View,Edit,Cancel!")
                                 .setAutoCancel(true)
