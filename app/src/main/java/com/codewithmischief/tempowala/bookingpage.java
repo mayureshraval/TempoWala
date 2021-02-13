@@ -2,8 +2,13 @@ package com.codewithmischief.tempowala;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -183,6 +188,31 @@ public class bookingpage extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(bookingpage.this, "Booking Successful", Toast.LENGTH_SHORT).show();
                         Log.d("Tag","onSuccess: Successfully booked for "+ userID);
+
+                        //notification
+                        Intent intent = new Intent(getApplicationContext(),bookinghistory.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        PendingIntent pi = PendingIntent.
+                                getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_ONE_SHOT);
+                        String Channel_Id="Default";
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),Channel_Id);
+                        builder.setSmallIcon(R.drawable.ic_launcher_background)
+                                .setContentTitle("Booking Successful!")
+                                .setContentText("Tap to View,Edit,Cancel!")
+                                .setAutoCancel(true)
+                                .setContentIntent(pi);
+                        NotificationManager manager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                        {
+                            NotificationChannel channel=new NotificationChannel(
+                                    Channel_Id,"Default channel",NotificationManager.IMPORTANCE_DEFAULT);
+                            manager.createNotificationChannel(channel);
+                        }
+                        manager.notify(0,builder.build());
+
+                        //above for notification
+
                         startActivity(new Intent(getApplicationContext(),MainActivity2.class));
                         finish();
                     }
