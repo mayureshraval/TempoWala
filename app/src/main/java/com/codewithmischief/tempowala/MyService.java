@@ -28,7 +28,7 @@ public class MyService extends FirebaseMessagingService {
                 getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
         String Channel_Id="Default";
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_Id);
-        builder.setSmallIcon(R.drawable.ic_launcher_background)
+        builder.setSmallIcon(R.drawable.ic_notify)
                 .setContentTitle(remoteMessage.getNotification().getTitle())
                 .setContentText(remoteMessage.getNotification().getBody())
                 .setAutoCancel(true)
