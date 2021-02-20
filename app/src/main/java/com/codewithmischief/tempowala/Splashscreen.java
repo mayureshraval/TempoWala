@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Splashscreen extends AppCompatActivity {
     FirebaseAuth fAuth;
@@ -21,10 +22,18 @@ public class Splashscreen extends AppCompatActivity {
             @Override
             public void run() {
                 if(fAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(getApplicationContext(),MainActivity2.class));
-                    finish();//destroys this activity from stack
+                    final FirebaseUser fUser=fAuth.getCurrentUser();
+                    if(!fUser.isEmailVerified()){
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
+                    }
+                    else {
+                        startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                        finish();
+                    }
+
                 }
-                else{
+                else {
                     startActivity(new Intent(getApplicationContext(),Login.class));
                     finish();
                 }

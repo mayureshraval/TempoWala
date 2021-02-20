@@ -64,10 +64,21 @@ public class Register extends AppCompatActivity {
         fstore=FirebaseFirestore.getInstance();
         progressBar = findViewById(R.id.progressBar);
 
+
+
+
         //if already logged in then send to main activity
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
+            final FirebaseUser fUser=fAuth.getCurrentUser();
+            if(fUser.isEmailVerified()){
+                startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+                finish();
+            }
+            else {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+
         }
 
         //when clicked on signup validate
