@@ -8,8 +8,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -43,8 +45,19 @@ EditText mtempofullname,mtempophone,mtempoaadhar,mtempodl,mtempocity,mtempostate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joinus);
         mtempofullname=findViewById(R.id.tempowalaname);
+
         mtempophone=findViewById(R.id.tempowalaphone);
+        //setting phone no to only number input(no special characters)
+        mtempophone.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mtempophone.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mtempoaadhar=findViewById(R.id.tempowalaadhar);
+        //setting aadhar no to only number input(no special characters)
+        mtempoaadhar.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mtempoaadhar.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mtempodl=findViewById(R.id.tempowaladl);
         mtempocity=findViewById(R.id.tempowalacity);
         mtempostate=findViewById(R.id.tempowalastate);

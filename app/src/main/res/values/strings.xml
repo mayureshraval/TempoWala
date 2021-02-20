@@ -111,7 +111,9 @@
     <string name="q8">Q8) Working hours?</string>
     <string name="a8">Ans) 10AM To 8PM 24x7.\n Bookings after 8PM will be attended next day!</string>
     <string name="q9">Q9) Contact Us/Lodge Complaint</string>
-    <string name="a9">Ans) Click to Email: tempowalaofficial@gmail.com</string>
+    <string name="a9">Ans) Click to Email:tempowalaofficial@gmail.com</string>
     <string name="q10">Q10) About Us.</string>
     <string name="a10">Ans) We are a small startup company,\nFounded in Jan,2021.\nWe have a vision to provide\neasy booking solutions to our users.\nWe also want to create employment by\nletting new TempoWalas Join Us.\nOur goal is to serve the people with full dedication.</string>
+    <string name="q11">Q11) Forgot Password/Reset Password?</string>
+    <string name="a11">Ans) Click to Reset Password.</string>
 </resources>

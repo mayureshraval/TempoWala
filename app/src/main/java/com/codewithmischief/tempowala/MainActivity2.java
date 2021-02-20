@@ -1,7 +1,10 @@
 package com.codewithmischief.tempowala;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -62,9 +67,46 @@ public class MainActivity2 extends AppCompatActivity {
 
         booknowbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),bookingpage.class));
+            public void onClick(final View view) {
+                //only way to check if it exists join us page
+                fstore.collection("Booking").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if(task.getResult().exists()){
+                            AlertDialog.Builder existsNotice = new AlertDialog.Builder(view.getContext());
+                            existsNotice.setTitle("Booking Already Exists!")
+                                    .setMessage("Please Delete Your Previous Booking Inorder To Proceed!")
+                                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            //Do nothing
+                                        }
+                                    });
+                                    existsNotice.create().show();
+
+                        }
+                        else{
+                            Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),bookingpage.class));
+                        }
+                    }
+                });
+
+//                //creating new document ref becoz i have one above
+//                DocumentReference  docref = fstore.collection("Booking").document(userId);
+//                docref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+//                         if (e!=null) {
+//                             Log.d("Tag1", "Error1:" + e.getMessage());
+//                             Toast.makeText(MainActivity2.this, "Booking exists", Toast.LENGTH_SHORT).show();
+//                         }
+//                         else{
+//                             Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
+//                             startActivity(new Intent(getApplicationContext(),bookingpage.class));
+//                         }
+//                    }
+//                });
             }
         });
 

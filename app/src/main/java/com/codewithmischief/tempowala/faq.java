@@ -1,5 +1,6 @@
 package com.codewithmischief.tempowala;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -20,10 +21,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.protobuf.StringValue;
 
 public class faq extends AppCompatActivity {
-TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10;
+TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10,mfaq11,mAns11;
+    FirebaseAuth fAuth;
     public final String KM_HINT="Enter Km";
     public final String FARE_HINT="\nResult";
     @Override
@@ -51,6 +56,10 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mAns9 =findViewById(R.id.ans9);
         mfaq10=findViewById(R.id.faq10);
         mAns10=findViewById(R.id.ans10);
+        mfaq11=findViewById(R.id.faq11);
+        mAns11=findViewById(R.id.ans11);
+
+        fAuth=FirebaseAuth.getInstance();
 
 //        mfaq.setOnClickListener(new View.OnClickListener() {
 //            int counter=0; //setting counter to count onclick
@@ -107,7 +116,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                 layout.addView(KM);
                 layout.addView(FARE);
                 farecalculator.setView(layout);
-
+                //to overide the closing of the dialog when calculate is pressed
                 farecalculator.setPositiveButton("Calculate",null)
                         .setNegativeButton("Close",null);
                 final AlertDialog dialog=farecalculator.create();
@@ -258,6 +267,65 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                 else {
                     mAns10.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        mfaq11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mAns11.getVisibility()== View.VISIBLE){
+                    mAns11.setVisibility(View.GONE);
+                }
+                else {
+                    mAns11.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        mAns11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final EditText resetMail = new EditText(view.getContext());
+                androidx.appcompat.app.AlertDialog.Builder passwordResetDialog= new androidx.appcompat.app.AlertDialog.Builder(view.getContext());
+                passwordResetDialog.setTitle("Reset password?");
+                passwordResetDialog.setMessage("Enter Email to get your reset link");
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        //setting new logic to prevent crash somehow this fixes crash
+                        String mail=resetMail.getText().toString();
+
+                        if(TextUtils.isEmpty(mail)){
+                            resetMail.setError("Email Required!");
+                        }
+                        else {
+
+                            fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(faq.this, "Reset Link Sent!", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(faq.this, "Reset Link Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+                        }
+                    }
+                });
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //close the dialog
+                    }
+                });
+
+                passwordResetDialog.create().show();
             }
         });
     }

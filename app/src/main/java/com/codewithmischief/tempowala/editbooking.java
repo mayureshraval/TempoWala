@@ -8,8 +8,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -50,8 +52,19 @@ public class editbooking extends AppCompatActivity {
 
         //pickup
         mFirstnamelastname=findViewById(R.id.firstlastname);
+
         mMobnum=findViewById(R.id.mobnum);
+        //setting phone no to only number input(no special characters)
+        mMobnum.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mMobnum.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mPincode=findViewById(R.id.pincode);
+        //setting pin no to only number input(no special characters)
+        mPincode.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mPincode.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mFlatno=findViewById(R.id.flatno);
         mArea=findViewById(R.id.area);
         mLandmark=findViewById(R.id.landmark);
@@ -60,7 +73,17 @@ public class editbooking extends AppCompatActivity {
         //destination
         mFirstnamelastname2=findViewById(R.id.firstlastname2);
         mMobnum2=findViewById(R.id.mobnum2);
+        //setting phone no to only number input(no special characters)
+        mMobnum2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mMobnum2.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mPincode2=findViewById(R.id.pincode2);
+        //setting pin no to only number input(no special characters)
+        mPincode2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mPincode2.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mFlatno2=findViewById(R.id.flatno2);
         mArea2=findViewById(R.id.area2);
         mLandmark2=findViewById(R.id.landmark2);

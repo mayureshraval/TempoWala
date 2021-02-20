@@ -86,6 +86,7 @@ public class bookinghistory extends AppCompatActivity {
         fstore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
+        //this one checks booking exists or not
         fstore.collection("Booking").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -120,6 +121,8 @@ public class bookinghistory extends AppCompatActivity {
             }
         });
 
+
+        //this one is used to set the text
             final DocumentReference documentReference = fstore.collection("Booking").document(userID);
 
             //if the document exists then set text and make GONE, but if it doesn't exist  be GONE

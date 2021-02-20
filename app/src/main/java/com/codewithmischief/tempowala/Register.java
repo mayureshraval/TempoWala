@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -48,7 +50,12 @@ public class Register extends AppCompatActivity {
         mFullName = findViewById(R.id.reg_fullname);
         mEmail = findViewById(R.id.reg_email);
         mPassword = findViewById(R.id.reg_pass);
+
         mPhone = findViewById(R.id.reg_phone);
+        //setting phone no to only number input(no special characters)
+        mPhone.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mPhone.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
         mRegisterBtn = findViewById(R.id.reg_btn1);
         login = findViewById(R.id.reg_login);
 
@@ -71,6 +78,7 @@ public class Register extends AppCompatActivity {
                 final String email = mEmail.getText().toString().trim();
                 final String password = mPassword.getText().toString().trim();
                 final String phone= mPhone.getText().toString().trim();
+
                 String character = "@";
 
                 if(TextUtils.isEmpty(email)){

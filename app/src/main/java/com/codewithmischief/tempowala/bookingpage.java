@@ -8,8 +8,10 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,10 +24,15 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class bookingpage extends AppCompatActivity {
 
@@ -46,8 +53,19 @@ public class bookingpage extends AppCompatActivity {
 
         //pickup
         mFirstnamelastname=findViewById(R.id.firstlastname);
+
         mMobnum=findViewById(R.id.mobnum);
+        //setting phone no to only number input(no special characters)
+        mMobnum.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mMobnum.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mPincode=findViewById(R.id.pincode);
+        //setting pin no to only number input(no special characters)
+        mPincode.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mPincode.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mFlatno=findViewById(R.id.flatno);
         mArea=findViewById(R.id.area);
         mLandmark=findViewById(R.id.landmark);
@@ -55,8 +73,19 @@ public class bookingpage extends AppCompatActivity {
         mState=findViewById(R.id.state);
         //destination
         mFirstnamelastname2=findViewById(R.id.firstlastname2);
+
         mMobnum2=findViewById(R.id.mobnum2);
+        //setting phone no to only number input(no special characters)
+        mMobnum2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mMobnum2.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mPincode2=findViewById(R.id.pincode2);
+        //setting pin no to only number input(no special characters)
+        mPincode2.setInputType(InputType.TYPE_CLASS_NUMBER);
+        mPincode2.setRawInputType(Configuration.KEYBOARD_12KEY);
+        //
+
         mFlatno2=findViewById(R.id.flatno2);
         mArea2=findViewById(R.id.area2);
         mLandmark2=findViewById(R.id.landmark2);
@@ -72,6 +101,7 @@ public class bookingpage extends AppCompatActivity {
         mBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //pickup
                 String firstname = mFirstnamelastname.getText().toString().trim();
                 String phoneno   = mMobnum.getText().toString().trim();
@@ -188,7 +218,7 @@ public class bookingpage extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(bookingpage.this, "Booking Successful", Toast.LENGTH_SHORT).show();
                         Log.d("Tag","onSuccess: Successfully booked for "+ userID);
-
+                        progressBar.setVisibility(View.INVISIBLE);
                         //notification
                         Intent intent = new Intent(getApplicationContext(),bookinghistory.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -220,6 +250,7 @@ public class bookingpage extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(bookingpage.this, "Error!" + e.getMessage(), Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 });
                 //creating backup collection
@@ -247,7 +278,7 @@ public class bookingpage extends AppCompatActivity {
 
                 newbackup.set(backup);
 
-                progressBar.setVisibility(View.INVISIBLE);
+
             }
         });
     }
