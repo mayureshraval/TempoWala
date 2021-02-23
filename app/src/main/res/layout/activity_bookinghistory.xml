@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/twback"
+    android:background="@drawable/ab"
     android:isScrollContainer="false"
     tools:context=".bookingpage">
 
@@ -507,10 +507,10 @@
             android:layout_marginRight="30dp"
             android:padding="30dp"
             android:text="@string/doesntexists"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
+            android:textColor="#AA00FF"
+            android:textColorHighlight="#AA00FF"
+            android:textColorHint="#AA00FF"
+            android:textColorLink="#AA00FF"
             android:textSize="30sp"
             android:textStyle="bold|italic"
             android:visibility="invisible"

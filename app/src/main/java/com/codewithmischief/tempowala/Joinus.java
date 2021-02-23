@@ -94,7 +94,7 @@ EditText mtempofullname,mtempophone,mtempoaadhar,mtempodl,mtempocity,mtempostate
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Joinus.this, "Submitting..", Toast.LENGTH_SHORT).show();
+
 
                 String fullname=mtempofullname.getText().toString().trim();
                 String phone=mtempophone.getText().toString().trim();
@@ -128,7 +128,7 @@ EditText mtempofullname,mtempophone,mtempoaadhar,mtempodl,mtempocity,mtempostate
                     return;
                 }
 
-
+                Toast.makeText(Joinus.this, "Submitting..", Toast.LENGTH_SHORT).show();
 
                 DocumentReference docref = fstore.collection("Applications").document(userID);
 

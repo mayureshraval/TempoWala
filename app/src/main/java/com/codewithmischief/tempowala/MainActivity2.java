@@ -75,7 +75,7 @@ public class MainActivity2 extends AppCompatActivity {
                         if(task.getResult().exists()){
                             AlertDialog.Builder existsNotice = new AlertDialog.Builder(view.getContext());
                             existsNotice.setTitle("Booking Already Exists!")
-                                    .setMessage("If your previous booking is COMPLETED then,On the Home Page Click:\n1.Booking History>\n2.Scroll Down>\n3.Delete>\n4.Yes")
+                                    .setMessage("If your previous booking is COMPLETED then,\nOn the Home Page Click:\n1.Booking History>\n2.Scroll Down>\n3.Delete>\n4.Yes")
                                     .setPositiveButton("Close", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
