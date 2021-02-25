@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:background="@drawable/ab"-->
-<!--    android:isScrollContainer="false"-->
-<!--    tools:context=".ytvideo">-->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -16,21 +7,21 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/racing_sans_one"
-        android:text="@string/howto1"
+        android:text="@string/howto2"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHighlight="#000000"
         android:textColorHint="#000000"
-        android:textSize="24sp" />
+        android:textSize="22sp" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/youtube_player_view"
+        android:id="@+id/youtube_player_view1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -39,24 +30,21 @@
         android:padding="10dp"
         app:autoPlay="false"
         app:showFullScreenButton="true"
-        app:useWebUi="false"
-        app:videoId="Hu8HXktvGYo">
+        app:videoId="YoLk1dK4oUM">
 
     </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/racing_sans_one"
-        android:text="@string/howto4"
+        android:text="@string/howto5"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHighlight="#000000"
         android:textColorHint="#000000"
-        android:textSize="24sp" />
-
-
+        android:textSize="22sp" />
 </LinearLayout>
-<!--</ScrollView>-->

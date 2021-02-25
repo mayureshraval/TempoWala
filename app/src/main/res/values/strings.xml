@@ -119,6 +119,14 @@
 
     /Activity yt
     <string name="howto1">How to book a tempo?</string>
+    <string name="howto4">1 - On the Home Page click on Book Now Button.\n2 - Then Fill the details and click on Book Button.\n3 - Congratulations! You have Booked Your First Tempo.</string>
+
     <string name="howto2">How to Edit/Cancel/Delete booking?</string>
+    <string name="howto5">1 - On the homepage click on Booking History.\n2 - Scroll down to see Edit/Cancel/Delete buttons.</string>
+
     <string name="howto3">How to Join Us?</string>
+    <string name="howto6">1 - To join us simply click on the Join Us button from Home Page.\n2 - Fill in required details and click on submit.\n3 - Once submitted We will Review your Application.\n4 - Once Approved we will call you to discuss further.</string>
+
+
+
 </resources>

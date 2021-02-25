@@ -201,7 +201,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mAns4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ytvideo.class));
+                startActivity(new Intent(getApplicationContext(),ytvideo1.class));
             }
         });
 
@@ -240,7 +240,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mAns7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ytvideo.class));
+                startActivity(new Intent(getApplicationContext(),ytvideo3.class));
             }
         });
 
