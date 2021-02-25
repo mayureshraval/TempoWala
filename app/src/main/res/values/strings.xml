@@ -82,32 +82,32 @@
 
     //faqpage
     <string name="q1">Q1) Fare Charges?</string>
-<!--    <string name="a1">The Fare System is subject to changes\nPlease Confirm the price with our employee on call after placing order.-->
-<!--        \n\t*Approximate*-->
-<!--        \n|&#45;&#45;Km&#45;&#45; |-&#45;&#45;Rs&#45;&#45;&#45;&#45;|-->
-<!--        \n|-&#45;&#45;1&#45;&#45;&#45;&#45;|-&#45;&#45;500-&#45;&#45;|-->
-<!--        \n|-&#45;&#45;2&#45;&#45;&#45;&#45;|-&#45;&#45;700-&#45;&#45;|+200-->
-<!--        \n|-&#45;&#45;3&#45;&#45;&#45;&#45;|-&#45;&#45;900-&#45;&#45;|+200-->
-<!--        \n|-&#45;&#45;4&#45;&#45;&#45;&#45;|&#45;&#45;1100&#45;&#45;|+200-->
-<!--        \n|-&#45;&#45;5&#45;&#45;&#45;&#45;|&#45;&#45;1400&#45;&#45;| 200+100 (5km +100)-->
-<!--        \n|-&#45;&#45;6&#45;&#45;&#45;&#45;|&#45;&#45;1700&#45;&#45;|+300-->
-<!--        \n|-&#45;&#45;7&#45;&#45;&#45;&#45;|&#45;&#45;2000&#45;&#45;|+300-->
-<!--        \n|-&#45;&#45;8&#45;&#45;&#45;&#45;|&#45;&#45;2300&#45;&#45;|+300-->
-<!--        \n|-&#45;&#45;9&#45;&#45;&#45;&#45;|&#45;&#45;2600&#45;&#45;|+300-->
-<!--        \n|-&#45;&#45;10&#45;&#45; |&#45;&#45;3000&#45;&#45;| 300+100 (5km +100)</string>-->
+    <!--    <string name="a1">The Fare System is subject to changes\nPlease Confirm the price with our employee on call after placing order.-->
+    <!--        \n\t*Approximate*-->
+    <!--        \n|&#45;&#45;Km&#45;&#45; |-&#45;&#45;Rs&#45;&#45;&#45;&#45;|-->
+    <!--        \n|-&#45;&#45;1&#45;&#45;&#45;&#45;|-&#45;&#45;500-&#45;&#45;|-->
+    <!--        \n|-&#45;&#45;2&#45;&#45;&#45;&#45;|-&#45;&#45;700-&#45;&#45;|+200-->
+    <!--        \n|-&#45;&#45;3&#45;&#45;&#45;&#45;|-&#45;&#45;900-&#45;&#45;|+200-->
+    <!--        \n|-&#45;&#45;4&#45;&#45;&#45;&#45;|&#45;&#45;1100&#45;&#45;|+200-->
+    <!--        \n|-&#45;&#45;5&#45;&#45;&#45;&#45;|&#45;&#45;1400&#45;&#45;| 200+100 (5km +100)-->
+    <!--        \n|-&#45;&#45;6&#45;&#45;&#45;&#45;|&#45;&#45;1700&#45;&#45;|+300-->
+    <!--        \n|-&#45;&#45;7&#45;&#45;&#45;&#45;|&#45;&#45;2000&#45;&#45;|+300-->
+    <!--        \n|-&#45;&#45;8&#45;&#45;&#45;&#45;|&#45;&#45;2300&#45;&#45;|+300-->
+    <!--        \n|-&#45;&#45;9&#45;&#45;&#45;&#45;|&#45;&#45;2600&#45;&#45;|+300-->
+    <!--        \n|-&#45;&#45;10&#45;&#45; |&#45;&#45;3000&#45;&#45;| 300+100 (5km +100)</string>-->
     <string name="a1">Ans) Click to calculate Fare</string>
     <string name="q2">Q2) How to Book?</string>
-    <string name="a2">Ans) On the Home Page click on Book Now Button.\nThen Fill the details and click on Book Button.\nCongratulations! You have Booked Your First Tempo.</string>
+    <string name="a2">Ans) On the Home Page click on Book Now Button.\nThen Fill the details and click on Book Button.\nCongratulations! You have Booked Your First Tempo.\n\nClick to watch video!</string>
     <string name="q3">Q3) How to check your Bookings?</string>
-    <string name="a3">Ans) On the homepage click on Booking History\nYou will be able to see your booking history.</string>
-    <string name="q4">Q4) How to Edit/Cancel booking?</string>
-    <string name="a4">Ans) On the homepage click on Booking History.\nScroll down to see Edit &amp; Cancel buttons.</string>
+    <string name="a3">Ans) On the homepage click on Booking History\nYou will be able to see your booking history.\n\nClick to watch video!</string>
+    <string name="q4">Q4) How to Edit/Cancel/Delete booking?</string>
+    <string name="a4">Ans) On the homepage click on Booking History.\nScroll down to see Edit &amp; Cancel buttons.\n\nClick to watch video</string>
     <string name="q5">Q5) What happens after booking is successful?</string>
     <string name="a5">Ans) After a booking is successful,\nWe recieve the details you entered.\nAn employee then calls on your Number,\nTo Assist with further procedure.</string>
     <string name="q6">Q6) How to pay? </string>
     <string name="a6">Ans) You can pay by Cash on Delivery, once your order is completed.</string>
     <string name="q7">Q7) Having a tempo,How to join?</string>
-    <string name="a7">Ans) To join us simply click on the Join Us button from Home Page.\nFill in required details and click on submit.\nOnce submitted We will Review your Application.\nOnce Approved we will call you to discuss further.</string>
+    <string name="a7">Ans) To join us simply click on the Join Us button from Home Page.\nFill in required details and click on submit.\nOnce submitted We will Review your Application.\nOnce Approved we will call you to discuss further.\n\nClick to watch video!</string>
     <string name="q8">Q8) Working hours?</string>
     <string name="a8">Ans) 10AM To 8PM 24x7.\n Bookings after 8PM will be attended next day!</string>
     <string name="q9">Q9) Contact Us/Lodge Complaint</string>
@@ -116,4 +116,9 @@
     <string name="a10">Ans) We are a small startup company,\nFounded in Jan,2021.\nWe have a vision to provide\neasy booking solutions to our users.\nWe also want to create employment by\nletting new TempoWalas Join Us.\nOur goal is to serve the people with full dedication.</string>
     <string name="q11">Q11) Forgot Password/Reset Password?</string>
     <string name="a11">Ans) Click to Reset Password.</string>
+
+    /Activity yt
+    <string name="howto1">How to book a tempo?</string>
+    <string name="howto2">How to Edit/Cancel/Delete booking?</string>
+    <string name="howto3">How to Join Us?</string>
 </resources>

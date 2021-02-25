@@ -169,6 +169,12 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                     mAns2.setVisibility(View.VISIBLE);
             }
         });
+        mAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ytvideo.class));
+            }
+        });
 
         mfaq3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,6 +186,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                     mAns3.setVisibility(View.VISIBLE);
             }
         });
+
         mfaq4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,6 +197,14 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                     mAns4.setVisibility(View.VISIBLE);
             }
         });
+
+        mAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ytvideo.class));
+            }
+        });
+
         mfaq5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,6 +225,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                     mAns6.setVisibility(View.VISIBLE);
             }
         });
+
         mfaq7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -220,6 +236,14 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
                     mAns7.setVisibility(View.VISIBLE);
             }
         });
+
+        mAns7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ytvideo.class));
+            }
+        });
+
         mfaq8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
