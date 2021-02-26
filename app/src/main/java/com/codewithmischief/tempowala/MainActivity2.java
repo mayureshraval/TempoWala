@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,29 +71,40 @@ public class MainActivity2 extends AppCompatActivity {
         booknowbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                //only way to check if it exists join us page
-                fstore.collection("Booking").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.getResult().exists()){
-                            AlertDialog.Builder existsNotice = new AlertDialog.Builder(view.getContext());
-                            existsNotice.setTitle("Booking Already Exists!")
-                                    .setMessage("If your previous booking is COMPLETED then,\nOn the Home Page Click:\n1.Booking History>\n2.Scroll Down>\n3.Delete>\n4.Yes")
-                                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            //Do nothing
-                                        }
-                                    });
-                                    existsNotice.create().show();
+                //checking if internet is on
+                //initializing connectivity manager
+                ConnectivityManager connectivityManager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                //getting active network info
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                //check net status
+                if(networkInfo==null || !networkInfo.isConnected() || !networkInfo.isAvailable()){
+                    Toast.makeText(MainActivity2.this, "Turn on internet to continue", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    //only way to check if it exists join us page
+                    fstore.collection("Booking").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if (task.getResult().exists()) {
+                                AlertDialog.Builder existsNotice = new AlertDialog.Builder(view.getContext());
+                                existsNotice.setTitle("Booking Already Exists!")
+                                        .setMessage("If your previous booking is COMPLETED then,\nOn the Home Page Click:\n1.Booking History>\n2.Scroll Down>\n3.Delete>\n4.Yes")
+                                        .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                //Do nothing
+                                            }
+                                        });
+                                existsNotice.create().show();
 
+                            } else {
+                                Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), bookingpage.class));
+                            }
                         }
-                        else{
-                            Toast.makeText(MainActivity2.this, "Redirecting to Booking page!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),bookingpage.class));
-                        }
-                    }
-                });
+
+                    });
+                }
 
 //                //creating new document ref becoz i have one above
 //                DocumentReference  docref = fstore.collection("Booking").document(userId);
@@ -113,16 +127,39 @@ public class MainActivity2 extends AppCompatActivity {
         bookhisbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity2.this, "Redirecting to Booking History page!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),bookinghistory.class));
+
+                //checking if internet is on
+                //initializing connectivity manager
+                ConnectivityManager connectivityManager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                //getting active network info
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                //check net status
+                if(networkInfo==null || !networkInfo.isConnected() || !networkInfo.isAvailable()){
+                    Toast.makeText(MainActivity2.this, "Turn on internet to continue", Toast.LENGTH_SHORT).show();
+                }
+                //
+                else {
+                    Toast.makeText(MainActivity2.this, "Redirecting to Booking History page!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), bookinghistory.class));
+                }
             }
         });
 
         joinusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity2.this, "Redirecting to JOIN US page!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),Joinus.class));
+                //checking if internet is on
+                //initializing connectivity manager
+                ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                //getting active network info
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                //check net status
+                if (networkInfo == null || !networkInfo.isConnected() || !networkInfo.isAvailable()) {
+                    Toast.makeText(MainActivity2.this, "Turn on internet to continue", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity2.this, "Redirecting to JOIN US page!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Joinus.class));
+                }
             }
         });
 

@@ -5,6 +5,7 @@
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">#000000</item>
+        <item name="android:navigationBarColor">#f66700</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
