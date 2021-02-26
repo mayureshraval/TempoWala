@@ -27,7 +27,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.protobuf.StringValue;
 
 public class faq extends AppCompatActivity {
-TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10,mfaq11,mAns11;
+TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
+        mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10,mfaq11,mAns11,mAns12,
+        mAns13,mAns14;
     FirebaseAuth fAuth;
     public final String KM_HINT="Enter Km";
     public final String FARE_HINT="\nResult";
@@ -58,6 +60,9 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mAns10=findViewById(R.id.ans10);
         mfaq11=findViewById(R.id.faq11);
         mAns11=findViewById(R.id.ans11);
+        mAns12=findViewById(R.id.ans12);
+        mAns13=findViewById(R.id.ans13);
+        mAns14=findViewById(R.id.ans14);
 
         fAuth=FirebaseAuth.getInstance();
 
@@ -162,19 +167,34 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mfaq2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mAns2.getVisibility()== View.VISIBLE){
+                if((mAns2.getVisibility() == View.VISIBLE) & (mAns12.getVisibility() == View.VISIBLE)){
                     mAns2.setVisibility(View.GONE);
+                    mAns12.setVisibility(View.GONE);
                 }
                 else
                     mAns2.setVisibility(View.VISIBLE);
+                    mAns12.setVisibility(View.VISIBLE);
             }
         });
-        mAns2.setOnClickListener(new View.OnClickListener() {
+
+//        mfaq2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if(mAns12.getVisibility()== View.VISIBLE){
+//                    mAns12.setVisibility(View.GONE);
+//                }
+//                else
+//                    mAns12.setVisibility(View.VISIBLE);
+//            }
+//        });
+        mAns12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),ytvideo.class));
             }
         });
+
+
 
         mfaq3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,15 +210,17 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mfaq4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mAns4.getVisibility()== View.VISIBLE){
+                if((mAns4.getVisibility() == View.VISIBLE) & (mAns13.getVisibility() == View.VISIBLE)){
                     mAns4.setVisibility(View.GONE);
+                    mAns13.setVisibility(View.GONE);
                 }
                 else
                     mAns4.setVisibility(View.VISIBLE);
+                    mAns13.setVisibility(View.VISIBLE);
             }
         });
 
-        mAns4.setOnClickListener(new View.OnClickListener() {
+        mAns13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),ytvideo1.class));
@@ -229,15 +251,17 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,m
         mfaq7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mAns7.getVisibility()== View.VISIBLE){
+                if((mAns7.getVisibility() == View.VISIBLE) & (mAns14.getVisibility() == View.VISIBLE)){
                     mAns7.setVisibility(View.GONE);
+                    mAns14.setVisibility(View.GONE);
                 }
                 else
                     mAns7.setVisibility(View.VISIBLE);
+                    mAns14.setVisibility(View.VISIBLE);
             }
         });
 
-        mAns7.setOnClickListener(new View.OnClickListener() {
+        mAns14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),ytvideo3.class));

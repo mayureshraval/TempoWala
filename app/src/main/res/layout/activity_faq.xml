@@ -143,6 +143,24 @@
                 android:visibility="gone" />
 
             <TextView
+                android:id="@+id/ans12"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/a12"
+                android:textColor="#0026FF"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textSize="17sp"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
+
+            <TextView
                 android:id="@+id/faq3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,6 +223,24 @@
                 android:textColorHint="#000000"
                 android:textColorLink="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ans13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/a12"
+                android:textColor="#0026FF"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone" />
 
@@ -303,6 +339,24 @@
                 android:textColorHint="#000000"
                 android:textColorLink="#000000"
                 android:textSize="14sp"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/ans14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/a12"
+                android:textColor="#0026FF"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone" />
 
