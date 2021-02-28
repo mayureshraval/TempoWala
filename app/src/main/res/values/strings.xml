@@ -101,7 +101,7 @@
     <string name="q3">Q3) How to check your Bookings?</string>
     <string name="a3">Ans) On the homepage click on Booking History\nYou will be able to see your booking history.</string>
     <string name="q4">Q4) How to Edit/Cancel/Delete booking?</string>
-    <string name="a4">Ans) On the homepage click on Booking History.\nScroll down to see Edit &amp; Cancel buttons.</string>
+    <string name="a4">Ans) On the homepage click on Booking History.\nScroll down to see Edit/Cancel/Delete buttons.</string>
     <string name="q5">Q5) What happens after booking is successful?</string>
     <string name="a5">Ans) After a booking is successful,\nWe receive the details you entered.\nAn employee then calls on your Number,\nTo Assist with further procedure.</string>
     <string name="q6">Q6) How to pay? </string>
@@ -111,7 +111,7 @@
     <string name="q8">Q8) Working hours?</string>
     <string name="a8">Ans) 10AM To 8PM 24x7.\n Bookings after 8PM will be attended next day!</string>
     <string name="q9">Q9) Contact Us/Lodge Complaint</string>
-    <string name="a9">Ans) Click to Email:tempowalaofficial@gmail.com</string>
+    <string name="a9">Click to email:<u>\ntempowalaofficial@gmail.com</u></string>
     <string name="q10">Q10) About Us.</string>
     <string name="a10">Ans) We are a small startup company,\nFounded in Jan,2021.\nWe have a vision to provide\neasy booking solutions to our users.\nWe also want to create employment by\nletting new TempoWalas Join Us.\nOur goal is to serve the people with full dedication.</string>
     <string name="q11">Q11) Forgot Password/Reset Password?</string>

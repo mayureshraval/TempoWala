@@ -90,13 +90,14 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
 
                     mAns.setVisibility(View.GONE);
                 }
-                else
+                else {
                     mAns.setVisibility(View.VISIBLE);
 //                ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) mfaq2.getLayoutParams();
 //                marginParams.setMargins(marginParams.leftMargin,
 //                        400, //only changing top margin
 //                        marginParams.rightMargin,
 //                        marginParams.bottomMargin);
+                }
             }
         });
         mAns.setOnClickListener(new View.OnClickListener() {
@@ -171,9 +172,10 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
                     mAns2.setVisibility(View.GONE);
                     mAns12.setVisibility(View.GONE);
                 }
-                else
+                else {
                     mAns2.setVisibility(View.VISIBLE);
                     mAns12.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -210,13 +212,14 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
         mfaq4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if((mAns4.getVisibility() == View.VISIBLE) & (mAns13.getVisibility() == View.VISIBLE)){
+                if((mAns4.getVisibility() == View.VISIBLE) || (mAns13.getVisibility() == View.VISIBLE)){
                     mAns4.setVisibility(View.GONE);
                     mAns13.setVisibility(View.GONE);
                 }
-                else
+                else {
                     mAns4.setVisibility(View.VISIBLE);
                     mAns13.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -251,13 +254,14 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
         mfaq7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if((mAns7.getVisibility() == View.VISIBLE) & (mAns14.getVisibility() == View.VISIBLE)){
+                if((mAns7.getVisibility() == View.VISIBLE) || (mAns14.getVisibility() == View.VISIBLE)){
                     mAns7.setVisibility(View.GONE);
                     mAns14.setVisibility(View.GONE);
                 }
-                else
+                else {
                     mAns7.setVisibility(View.VISIBLE);
                     mAns14.setVisibility(View.VISIBLE);
+                }
             }
         });
 

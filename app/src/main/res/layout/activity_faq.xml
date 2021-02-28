@@ -418,11 +418,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:text="@string/a9"
-                android:textColor="#000000"
+                android:textColor="#0026FF"
                 android:textColorHighlight="#000000"
                 android:textColorHint="#000000"
                 android:textColorLink="#000000"
-                android:textSize="14sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 android:visibility="gone" />
 
