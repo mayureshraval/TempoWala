@@ -293,7 +293,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
                     mAns9.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            String[] ourMail = {"tempowalaofficial@gmail.com"};
+                            String[] ourMail = {"officialtempowala@gmail.com"};
 //                            String[] cc = {"tempowalaofficial@gmail.com"};
 //                            String[] bcc = {"tempowalaofficial@gmail.com"};
                             Intent intent =new Intent(Intent.ACTION_SENDTO);
