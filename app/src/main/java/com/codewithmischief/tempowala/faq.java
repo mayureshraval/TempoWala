@@ -31,6 +31,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
         mfaq7,mAns7,mfaq8,mAns8,mfaq9,mAns9,mfaq10,mAns10,mfaq11,mAns11,mAns12,
         mAns13,mAns14;
     FirebaseAuth fAuth;
+    String userId;
     public final String KM_HINT="Enter Km";
     public final String FARE_HINT="\nResult";
     @Override
@@ -65,6 +66,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
         mAns14=findViewById(R.id.ans14);
 
         fAuth=FirebaseAuth.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
 
 //        mfaq.setOnClickListener(new View.OnClickListener() {
 //            int counter=0; //setting counter to count onclick
@@ -302,7 +304,7 @@ TextView mfaq,mAns,mfaq2,mAns2,mfaq3,mAns3,mfaq4,mAns4,mfaq5,mAns5,mfaq6,mAns6,
 //                            intent.putExtra(Intent.EXTRA_CC, cc);
 //                            intent.putExtra(Intent.EXTRA_BCC, bcc);
                             intent.putExtra(Intent.EXTRA_SUBJECT,"Reason to contact here..");
-                            intent.putExtra(Intent.EXTRA_TEXT,"Full Name:\n Phone No:(Optional) \nExplain in detail here..");
+                            intent.putExtra(Intent.EXTRA_TEXT,"Full Name:\nPhone No:\n\nTracking id:\n"+userId+"\n\nExplain in detail here..");
 
                             startActivity(Intent.createChooser(intent,"Choose Application To Send Email"));
 
