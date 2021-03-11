@@ -78,7 +78,23 @@ public class MainActivity2 extends AppCompatActivity {
                 NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
                 //check net status
                 if(networkInfo==null || !networkInfo.isConnected() || !networkInfo.isAvailable()){
-                    Toast.makeText(MainActivity2.this, "Turn on internet to continue", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder NoInternet = new AlertDialog.Builder(view.getContext());
+                    NoInternet.setTitle("No connection!")
+                            .setMessage("No internet connection!\nDo you want to book with Sms?\nNote:SMS Charges may apply as per your provider.")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    //booking via sms
+                                    startActivity(new Intent(getApplicationContext(),smsbooking.class));
+                                }
+                            }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //do nothing
+                        }
+                    });
+                    NoInternet.create().show();
+                    Toast.makeText(MainActivity2.this, "No Connection!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     //only way to check if it exists join us page
