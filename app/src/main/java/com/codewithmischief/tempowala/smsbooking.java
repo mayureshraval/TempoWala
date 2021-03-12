@@ -23,6 +23,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class smsbooking extends AppCompatActivity {
 
     EditText mFirstnamelastname,mMobnum,mPincode,mFlatno,mArea,mLandmark,mTown,mState,
@@ -31,6 +33,8 @@ public class smsbooking extends AppCompatActivity {
     Button mBook;
     ProgressBar progressBar;
 
+    String userID;
+    FirebaseAuth fAuth;
     final int SEND_SMS_PERMISSION_REQUEST_CODE = 1;
 
 
@@ -38,6 +42,9 @@ public class smsbooking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smsbooking);
+
+        fAuth=FirebaseAuth.getInstance();
+        userID=fAuth.getCurrentUser().getUid();
 
         //checking permission
 
@@ -118,6 +125,8 @@ public class smsbooking extends AppCompatActivity {
                 String town2 = mTown2.getText().toString().trim();
                 String state2 = mState2.getText().toString().trim();
 
+                String pickup= firstname+"\n"+phoneno+"\n"+pincode+"\n"+flatno+"\n"+area+"\n"+landmark+"\n"+town+"\n"+state;
+                String destination= firstname2+"\n"+phoneno2+"\n"+pincode2+"\n"+flatno2+"\n"+area2+"\n"+landmark2+"\n"+town2+"\n"+state2;
                 //Validation
                 //pickup
                 if (TextUtils.isEmpty(firstname)) {
@@ -147,6 +156,10 @@ public class smsbooking extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(state)) {
                     mState.setError("State Required!");
+                    return;
+                }
+                if(pickup.length()>130){
+                    Toast.makeText(smsbooking.this, "Reduce your pickup address to 130 characters", Toast.LENGTH_LONG).show();
                     return;
                 }
                 //destination
@@ -179,6 +192,10 @@ public class smsbooking extends AppCompatActivity {
                     mState2.setError("State Required!");
                     return;
                 }
+                if(destination.length()>130){
+                    Toast.makeText(smsbooking.this, "Reduce your destination address to 130 characters", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -186,8 +203,10 @@ public class smsbooking extends AppCompatActivity {
                 String ourNumber="8356951424";
                 if(checkPermission(Manifest.permission.SEND_SMS)){
                     SmsManager smsManager=SmsManager.getDefault();
-                    smsManager.sendTextMessage(ourNumber,null,"id:"+phoneno+"\nPick"+"\n"+firstname+"\n"+phoneno+"\n"+pincode+"\n"+flatno+"\n"+area+"\n"+landmark+"\n"+town+"\n"+state,null,null);
-                    smsManager.sendTextMessage(ourNumber,null,"id:"+phoneno+"\nDrop"+"\n"+firstname2+"\n"+phoneno2+"\n"+pincode2+"\n"+flatno2+"\n"+area2+"\n"+landmark2+"\n"+town2+"\n"+state2,null,null);
+                    smsManager.sendTextMessage(ourNumber,null,"id:"+userID+"\n"+pickup,null,null);
+                    smsManager.sendTextMessage(ourNumber,null,"id:"+userID+"\n"+destination,null,null);
+//                    smsManager.sendTextMessage(ourNumber,null,"id:"+phoneno+"\nPick"+"\n"+firstname+"\n"+phoneno+"\n"+pincode+"\n"+flatno+"\n"+area+"\n"+landmark+"\n"+town+"\n"+state,null,null);
+//                    smsManager.sendTextMessage(ourNumber,null,"id:"+phoneno+"\nDrop"+"\n"+firstname2+"\n"+phoneno2+"\n"+pincode2+"\n"+flatno2+"\n"+area2+"\n"+landmark2+"\n"+town2+"\n"+state2,null,null);
                     Toast.makeText(smsbooking.this, "Msg Sent!\nWe will call you soon\nCheck your sent messages for more!", Toast.LENGTH_LONG).show();
 
                     //notification
